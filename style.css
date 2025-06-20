@@ -1,0 +1,269 @@
+/* Import a professional and legible font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* Basic Resets & Body Styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Primary font for most text */
+    line-height: 1.6;
+    color: #E0E0E0; /* Light gray for main text */
+    background-color: #121212; /* Very dark almost black background */
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #F8F8F8; /* White for headings */
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.8em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 2.2em;
+    color: #00ADB5; /* A vibrant teal/cyan for section titles */
+    text-align: center;
+    margin-bottom: 1.5em;
+    position: relative; /* For the underline effect */
+}
+
+h2::after { /* Underline effect for section titles */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00ADB5;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.6em;
+    color: #EEEEEE; /* Slightly off-white for sub-headings */
+}
+
+/* Links */
+a {
+    color: #00ADB5; /* Teal/cyan for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #F8F8F8; /* White on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Layout Containers */
+.site-header, .site-main, .site-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Specifics */
+.site-header {
+    background-color: #000000; /* Pure black header background */
+    color: #F8F8F8;
+    padding: 30px 20px;
+    border-bottom: 2px solid #00ADB5; /* Accent border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-family: 'Roboto Mono', monospace; /* Monospaced font for tagline */
+    font-size: 1.1em;
+    color: #B0B0B0; /* Lighter gray for tagline */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between navigation items */
+}
+
+.main-nav a {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #F8F8F8; /* White for nav links */
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background-color: #00ADB5; /* Teal background on hover */
+    color: #000000; /* Black text on hover */
+    text-decoration: none;
+}
+
+/* Main Content Sections */
+.portfolio-section {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Subtle separator */
+    position: relative; /* For potential future effects */
+}
+
+.portfolio-section:last-of-type {
+    border-bottom: none; /* No border for the last section */
+}
+
+.section-content {
+    max-width: 900px; /* Max width for content within sections */
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #1E1E1E; /* Dark gray for section background */
+    border: 2px solid #333333; /* Darker border for the "frame" effect */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+}
+
+/* About Section Text Only Adjustment */
+.about-text-only p {
+    margin-bottom: 1em;
+    text-align: center; /* Center the text in the About section */
+}
+
+
+/* Skills Section Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.skill-category {
+    background-color: #282828; /* Slightly lighter dark gray for skill cards */
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #444444; /* Subtle border for skill cards */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category h3 {
+    color: #00ADB5; /* Teal for skill category titles */
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1); /* Dashed separator for skills */
+    color: #E0E0E0;
+}
+
+.skill-category li:last-child {
+    border-bottom: none;
+}
+
+/* Projects Section Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: #282828;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #444444;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-card h3 a {
+    color: #00ADB5; /* Teal for project titles */
+    font-size: 1.4em;
+}
+
+.project-card p {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    font-family: 'Roboto Mono', monospace; /* Monospaced for tech stack */
+    font-size: 0.85em;
+    color: #B0B0B0;
+    margin-top: auto; /* Pushes to bottom */
+}
+
+
+/* Contact Section */
+.contact-section p {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.contact-info {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+/* Footer Specifics */
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #000000;
+    color: #B0B0B0;
+    font-size: 0.9em;
+    border-top: 2px solid #00ADB5; /* Accent border */
+    margin-top: 40px;
+}
+
+.site-footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .section-content {
+        padding: 25px;
+    }
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
