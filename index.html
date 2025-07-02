@@ -3,254 +3,1208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youssef Helal - Robotics Engineer | Data Scientist | Python Developer</title>
-    <meta name="description" content="Youssef Tarek Samir Ahmed Helal's portfolio showcasing robotics engineering, data science, Python development, and graphic design expertise.">
-    <link rel="stylesheet" href="style.css">
+    <title>Youssef Helal - Robotics Engineer | Data Scientist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00adb5;
+            --primary-dark: #009299;
+            --secondary: #222831;
+            --dark: #121212;
+            --light: #eeeeee;
+            --gray: #393e46;
+            --card-bg: #1e1e1e;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--light);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70%;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--light);
+            text-decoration: underline;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            color: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 173, 181, 0.4);
+            text-decoration: none;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--light);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, #121212 0%, #000000 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 173, 181, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .hero-tagline {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-image-content {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .profile-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: 0 0 50px rgba(0, 173, 181, 0.5);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .tech-icons {
+            position: absolute;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .tech-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            font-size: 1.8rem;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .highlight-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .highlight-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .about-stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+        }
+        
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .expertise-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border-bottom: 4px solid var(--primary);
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .expertise-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .expertise-card h3 {
+            margin-bottom: 20px;
+        }
+        
+        .expertise-list {
+            list-style: none;
+        }
+        
+        .expertise-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            text-align: left;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .expertise-list li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .expertise-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Tools Section */
+        .tools-section {
+            background: rgba(0, 173, 181, 0.05);
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 60px;
+            border: 1px solid rgba(0, 173, 181, 0.1);
+        }
+        
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .tool-tag {
+            background: rgba(0, 173, 181, 0.15);
+            color: var(--primary);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .project-header {
+            padding: 30px 30px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .project-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        .project-content {
+            padding: 20px 30px;
+            flex-grow: 1;
+        }
+        
+        .project-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 173, 181, 0.1);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+        }
+        
+        .stat i {
+            color: var(--primary);
+        }
+        
+        .project-tech {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.95rem;
+            color: #b0b0b0;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-footer {
+            padding: 20px 30px;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 60px 0 30px;
+            border-top: 2px solid var(--primary);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-tagline {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-link {
+            font-size: 1.5rem;
+            color: var(--light);
+            transition: var(--transition);
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            margin-top: 20px;
+        }
+        
+        .publish-date {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 173, 181, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                margin-bottom: 50px;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .profile-image {
+                width: 280px;
+                height: 280px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .about-highlights, 
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 130px 0 60px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .profile-image {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .tech-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- New Compact Header -->
-    <header class="site-header">
-        <div class="header-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
             <div class="logo">
-                <h1>Youssef Helal</h1>
-                <p class="tagline">Robotics | Data Science | Python</p>
+                <div class="logo-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="logo-text">Youssef<span>Helal</span></div>
             </div>
-            <button class="menu-toggle" aria-label="Toggle navigation">
+            
+            <button class="mobile-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
-                    <li><a href="#expertise"><i class="fas fa-star"></i> <span>Expertise</span></a></li>
-                    <li><a href="#projects"><i class="fas fa-code"></i> <span>Projects</span></a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
-                </ul>
-            </nav>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </header>
 
-    <main class="site-main">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2>Building Intelligent Systems & Creative Solutions</h2>
-                    <p>Robotics Engineer | Python Developer | Data Science Enthusiast</p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn primary">View Projects</a>
-                        <a href="#contact" class="btn secondary">Contact Me</a>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-tagline">
+                    <i class="fas fa-star"></i> Portfolio Published Today
+                </div>
+                <h1>Robotics Engineer & Data Scientist</h1>
+                <p class="hero-subtitle">Building intelligent systems, designing impactful content, and creating data-driven solutions that bridge technology and creativity.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
             </div>
-        </section>
-
-        <section id="about" class="portfolio-section about-section">
-            <div class="section-content">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>I'm a multi-talented robotics and coding enthusiast with a deep love for AI, Python, data science, and content creation. I blend technical precision with creativity to build innovative solutions.</p>
-                        <p>As the founder of <a href="https://www.instagram.com/_._.flare_._/" target="_blank" rel="noopener noreferrer">Flare</a>, I've developed a brand focused on graphic design and digital content creation. This endeavor allows me to combine my creative vision with technical skills.</p>
-                        <p>Currently a high school student based in Egypt, I'm continuously expanding my knowledge in robotics engineering, data science, and digital marketing.</p>
+            
+            <div class="hero-image">
+                <div class="hero-image-content">
+                    <div class="tech-icons">
+                        <div class="tech-icon" style="top: -30px; left: 50%; transform: translateX(-50%);">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="tech-icon" style="top: 50%; left: -30px; transform: translateY(-50%);">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="tech-icon" style="top: 50%; right: -30px; transform: translateY(-50%);">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="tech-icon" style="bottom: -30px; left: 50%; transform: translateX(-50%);">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
                     </div>
+                    <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Youssef Helal" class="profile-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Get to know my journey and passion for technology</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a multi-talented robotics and coding enthusiast with a deep love for AI, Python, data science, and content creation. I blend technical precision with creativity to build innovative solutions that solve real-world problems.</p>
+                    
+                    <p>As the founder of <a href="https://www.instagram.com/_._.flare_._/" target="_blank">Flare</a>, I've developed a brand focused on graphic design and digital content creation. This endeavor allows me to combine my creative vision with technical skills to create compelling visual experiences.</p>
+                    
+                    <p>Currently a high school student based in Egypt, I'm continuously expanding my knowledge in robotics engineering, data science, and digital marketing to create impactful solutions that bridge technology and creativity.</p>
+                    
                     <div class="about-highlights">
                         <div class="highlight-card">
                             <i class="fas fa-robot"></i>
                             <h3>Robotics</h3>
-                            <p>Arduino-based systems</p>
+                            <p>Built Arduino-based robotic systems with sensor integration</p>
                         </div>
                         <div class="highlight-card">
                             <i class="fas fa-chart-line"></i>
                             <h3>Data Science</h3>
-                            <p>Python & Pandas</p>
+                            <p>Cleaned and analyzed complex Twitter data using Python</p>
+                        </div>
+                        <div class="highlight-card">
+                            <i class="fab fa-instagram"></i>
+                            <h3>Flare Growth</h3>
+                            <p>Achieved rapid growth in views using viral reel strategies</p>
                         </div>
                         <div class="highlight-card">
                             <i class="fas fa-paint-brush"></i>
                             <h3>Design</h3>
-                            <p>Graphic & Digital</p>
+                            <p>Created 100+ carousel posts and thumbnails with Canva Pro</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="expertise" class="portfolio-section expertise-section">
-            <div class="section-content">
-                <h2>Areas of Expertise</h2>
-                <div class="expertise-grid">
-                    <div class="expertise-category">
-                        <div class="expertise-header">
-                            <i class="fas fa-microchip"></i>
-                            <h3>Robotics & Engineering</h3>
-                        </div>
-                        <ul>
-                            <li>Arduino development</li>
-                            <li>Sensor integration</li>
-                            <li>Motor control systems</li>
-                            <li>Hardware prototyping</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="expertise-category">
-                        <div class="expertise-header">
-                            <i class="fas fa-database"></i>
-                            <h3>Data Science</h3>
-                        </div>
-                        <ul>
-                            <li>Data cleaning & wrangling</li>
-                            <li>Advanced visualization</li>
-                            <li>Statistical analysis</li>
-                            <li>Jupyter Notebook</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="expertise-category">
-                        <div class="expertise-header">
-                            <i class="fas fa-code"></i>
-                            <h3>Programming</h3>
-                        </div>
-                        <ul>
-                            <li>Python development</li>
-                            <li>Automation tools</li>
-                            <li>AI applications</li>
-                            <li>HTML/CSS</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="expertise-category">
-                        <div class="expertise-header">
-                            <i class="fas fa-palette"></i>
-                            <h3>Design & Content</h3>
-                        </div>
-                        <ul>
-                            <li>Graphic design</li>
-                            <li>Social media strategy</li>
-                            <li>Content creation</li>
-                            <li>Brand identity</li>
-                        </ul>
                     </div>
                 </div>
                 
-                <div class="tools-section">
-                    <h3>Tools & Technologies</h3>
-                    <div class="tools-grid">
-                        <span class="tool-tag">Python</span>
-                        <span class="tool-tag">Pandas</span>
-                        <span class="tool-tag">Arduino</span>
-                        <span class="tool-tag">Matplotlib</span>
-                        <span class="tool-tag">HTML/CSS</span>
-                        <span class="tool-tag">Canva Pro</span>
-                        <span class="tool-tag">AI Tools</span>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">600%</div>
+                        <div class="stat-label">Instagram Growth</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">100+</div>
+                        <div class="stat-label">Designs Created</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">10K+</div>
+                        <div class="stat-label">Data Records Analyzed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">15</div>
+                        <div class="stat-label">Days Since Flare Launch</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects" class="portfolio-section projects-section">
-            <div class="section-content">
+    <!-- Expertise Section -->
+    <section class="section" id="expertise" style="background: rgba(0,0,0,0.5);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Areas of Expertise</h2>
+                <p>My technical skills and professional capabilities</p>
+            </div>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Robotics & Engineering</h3>
+                    <ul class="expertise-list">
+                        <li>Arduino development</li>
+                        <li>Sensor integration</li>
+                        <li>Motor control systems</li>
+                        <li>Hardware prototyping</li>
+                        <li>Environmental sensing</li>
+                    </ul>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Science</h3>
+                    <ul class="expertise-list">
+                        <li>Data cleaning & wrangling</li>
+                        <li>Advanced visualization</li>
+                        <li>Statistical analysis</li>
+                        <li>Jupyter Notebook reports</li>
+                        <li>Pandas & NumPy</li>
+                    </ul>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <ul class="expertise-list">
+                        <li>Python development</li>
+                        <li>Automation tools</li>
+                        <li>AI-based applications</li>
+                        <li>HTML/CSS</li>
+                        <li>Web scraping</li>
+                    </ul>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Design & Content</h3>
+                    <ul class="expertise-list">
+                        <li>Graphic design</li>
+                        <li>Social media strategy</li>
+                        <li>Viral content creation</li>
+                        <li>Brand identity</li>
+                        <li>Visual communication</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tools-section">
+                <h3 style="text-align: center; margin-bottom: 30px;">Tools & Technologies</h3>
+                <div class="tools-grid">
+                    <div class="tool-tag">Python</div>
+                    <div class="tool-tag">Pandas</div>
+                    <div class="tool-tag">NumPy</div>
+                    <div class="tool-tag">Matplotlib</div>
+                    <div class="tool-tag">Seaborn</div>
+                    <div class="tool-tag">Arduino</div>
+                    <div class="tool-tag">HTML/CSS</div>
+                    <div class="tool-tag">Canva Pro</div>
+                    <div class="tool-tag">AI Tools</div>
+                    <div class="tool-tag">Meta Tools</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-title">
                 <h2>Projects & Achievements</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
+                <p>My recent work and accomplishments</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
                         <div class="project-icon">
                             <i class="fab fa-instagram"></i>
                         </div>
-                        <h3><a href="https://www.instagram.com/_._.flare_._/" target="_blank" rel="noopener noreferrer">Flare: Creative Brand</a></h3>
-                        <p>Launched a new creative brand focused on graphic design and digital content. Developed brand identity and content strategy.</p>
+                        <h3>Flare: Creative Brand</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Launched a new creative brand focused on graphic design and digital content. Developed brand identity and content strategy achieving significant growth in just 15 days.</p>
+                        
                         <div class="project-stats">
                             <div class="stat">
                                 <i class="fas fa-paint-brush"></i>
-                                <span>20+ Designs</span>
+                                <span>20+ Designs Created</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-rocket"></i>
+                                <span>Rapid Growth</span>
                             </div>
                         </div>
-                        <p class="project-tech"><strong>Technologies:</strong> Canva Pro, AI tools, Brand Strategy</p>
-                    </article>
-                    
-                    <article class="project-card">
+                        
+                        <p class="project-tech"><strong>Technologies:</strong> Canva Pro, AI tools, Instagram Analytics, Viral Content Strategy</p>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://www.instagram.com/_._.flare_._/" target="_blank" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
                         <div class="project-icon">
                             <i class="fas fa-robot"></i>
                         </div>
                         <h3>Arduino Robotics System</h3>
-                        <p>Designed and built an Arduino-based robotic system with sensor integration and motor control. Implemented environmental sensing capabilities.</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Designed and built an Arduino-based robotic system with sensor integration and motor control. Implemented environmental sensing and autonomous navigation capabilities.</p>
+                        
                         <div class="project-stats">
                             <div class="stat">
                                 <i class="fas fa-microchip"></i>
-                                <span>5+ Sensors</span>
+                                <span>5+ Sensors Integrated</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-cogs"></i>
+                                <span>Precision Motor Control</span>
                             </div>
                         </div>
-                        <p class="project-tech"><strong>Technologies:</strong> Arduino, Motor Controllers, Sensors</p>
-                    </article>
-                    
-                    <article class="project-card">
+                        
+                        <p class="project-tech"><strong>Technologies:</strong> Arduino, Motor Controllers, Ultrasonic Sensors, IR Sensors</p>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
                         <div class="project-icon">
                             <i class="fas fa-chart-bar"></i>
                         </div>
                         <h3>Twitter Data Analysis</h3>
-                        <p>Cleaned and analyzed Twitter datasets using Python and Pandas. Created visualizations to identify trends in social media engagement.</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Cleaned and analyzed Twitter datasets using Python and Pandas. Created insightful visualizations to identify trends and patterns in social media engagement and sentiment.</p>
+                        
                         <div class="project-stats">
                             <div class="stat">
                                 <i class="fas fa-database"></i>
-                                <span>10K+ Records</span>
+                                <span>10K+ Records Analyzed</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>8 Visualizations Created</span>
                             </div>
                         </div>
-                        <p class="project-tech"><strong>Technologies:</strong> Python, Pandas, Matplotlib</p>
-                    </article>
+                        
+                        <p class="project-tech"><strong>Technologies:</strong> Python, Pandas, Matplotlib, Jupyter Notebook</p>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" class="btn btn-outline">View Analysis</a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="portfolio-section contact-section">
-            <div class="section-content">
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="background: rgba(0,0,0,0.5);">
+        <div class="container">
+            <div class="section-title">
                 <h2>Get In Touch</h2>
-                <p>I'm available for collaborations, freelance opportunities, and discussing innovative projects.</p>
-                
-                <div class="contact-methods">
-                    <div class="contact-card">
+                <p>Let's work together on your next project</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <a href="mailto:yousseftareksamir2010@gmail.com">yousseftareksamir2010@gmail.com</a>
                     </div>
-                    
-                    <div class="contact-card">
+                    <h3>Email</h3>
+                    <p>Reach out for collaborations or inquiries</p>
+                    <a href="mailto:yousseftareksamir2010@gmail.com">yousseftareksamir2010@gmail.com</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
                         <i class="fab fa-instagram"></i>
-                        <h3>Flare Instagram</h3>
-                        <a href="https://www.instagram.com/_._.flare_._/" target="_blank" rel="noopener noreferrer">@_._.flare_._</a>
                     </div>
-                    
-                    <div class="contact-card">
+                    <h3>Flare Instagram</h3>
+                    <p>Follow my creative design journey</p>
+                    <a href="https://www.instagram.com/_._.flare_._/" target="_blank">@_._.flare_._</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
-                        <h3>Location</h3>
-                        <p>Egypt, Available Worldwide</p>
                     </div>
+                    <h3>Location</h3>
+                    <p>Based in Egypt, working worldwide</p>
+                    <p>Available for remote collaborations</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Youssef Tarek Samir Ahmed Helal. All rights reserved.</p>
-            <p>High School Student | Robotics Enthusiast | Content Creator</p>
-            <div class="footer-links">
-                <a href="mailto:yousseftareksamir2010@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.instagram.com/_._.flare_._/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Youssef<span>Helal</span></div>
+                <p class="footer-tagline">Robotics Engineer | Data Scientist | Python Developer | Graphic Designer</p>
+                
+                <div class="footer-links">
+                    <a href="mailto:yousseftareksamir2010@gmail.com" class="footer-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com/_._.flare_._/" target="_blank" class="footer-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                
+                <div class="publish-date">
+                    <i class="fas fa-calendar-check"></i> Portfolio Published Today
+                </div>
+                
+                <p class="copyright">&copy; 2025 Youssef Tarek Samir Ahmed Helal. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.main-nav').classList.toggle('active');
+        // Mobile navigation toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
         
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const nav = document.querySelector('.main-nav');
-            const toggle = document.querySelector('.menu-toggle');
-            if (!nav.contains(event.target) && !toggle.contains(event.target) {
-                nav.classList.remove('active');
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.5)';
+                header.style.background = 'rgba(18, 18, 18, 0.98)';
+            } else {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+                header.style.background = 'rgba(18, 18, 18, 0.95)';
             }
         });
     </script>
